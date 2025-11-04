@@ -1,0 +1,27 @@
+@use "../../../styles/colors" as *;
+
+header {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+
+  .logo {
+    font-size: 3rem;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo:visited,
+  .logo:link,
+  .logo:hover {
+    color: $color-primary;
+  }
+
+  .logo:active {
+    color: $color-secondary;
+  }
+
+  .navWrapper {
+    display: flex;
+    align-items: center;
+  }
+}
