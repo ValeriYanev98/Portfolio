@@ -1,0 +1,20 @@
+{
+  "name": "portfolio-backend",
+  "version": "1.0.0",
+  "description": "Server for the portfolio, mainly for sending emails with Nodemailer.",
+  "homepage": "https://github.com/ValeriYanev98/Portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/ValeriYanev98/Portfolio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValeriYanev98/Portfolio.git"
+  },
+  "license": "ISC",
+  "author": "Valeri Yanev",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest"
+  }
+}
