@@ -15,7 +15,8 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "echo 'No build needed yet'"
   },
   "dependencies": {
     "cors": "^2.8.5",
