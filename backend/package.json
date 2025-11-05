@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-backend",
+  "name": "portfolio_backend",
   "version": "1.0.0",
   "description": "Server for the portfolio, mainly for sending emails with Nodemailer.",
   "homepage": "https://github.com/ValeriYanev98/Portfolio#readme",
