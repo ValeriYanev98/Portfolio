@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/ValeriYanev98/Portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/ValeriYanev98/Portfolio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValeriYanev98/Portfolio.git"
+  },
+  "license": "ISC",
+  "author": "Valeri Yanev",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {},
+  "workspaces": [
+    "frontend",
+    "backend",
+    "packages/*"
+  ],
+  "private": true
+}
