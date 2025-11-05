@@ -4,13 +4,13 @@ import styles from "./Hero.module.scss";
 const Hero: React.FC = () => {
   return (
     <section className={styles.sectionHero}>
-      <h1>Valeri — Full-Stack Web Developer</h1>
-      <p>
+      <h1>Valeri Yanev | Full-Stack Web Developer</h1>
+      <p className={styles.sectionHeroIntroduction}>
         I build secure and fast web applications with React, TypeScript and Node.js, creating complex features like
         secure payment integration and real-time data tracking.
       </p>
 
-      <ul>
+      <ul className={styles.sectionHeroMainTechStack}>
         <li>
           <img src="/svg/typescript.svg" />
         </li>

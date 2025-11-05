@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   css: {
     modules: {
-      generateScopedName: "[hash:base64:16]",
+      generateScopedName: "[hash:base64:16][hash:hex]",
     },
   },
 });
