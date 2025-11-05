@@ -1,0 +1,27 @@
+{
+  "name": "custom-validation",
+  "version": "1.1.0",
+  "description": "Validation with Zod for Frontend and Backend",
+  "homepage": "https://github.com/ValeriYanev98/Portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/ValeriYanev98/Portfolio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValeriYanev98/Portfolio.git"
+  },
+  "license": "ISC",
+  "author": "Valeri Yanev",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
