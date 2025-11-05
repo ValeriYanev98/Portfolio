@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "portfolio_frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "custom-validation": "*",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-hook-form": "^7.66.0",
     "sass": "^1.93.3"
   },
   "devDependencies": {
