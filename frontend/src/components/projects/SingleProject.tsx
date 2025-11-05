@@ -1,6 +1,6 @@
 import type React from "react";
 import styles from "./Projects.module.scss";
-import type { ProjectsInterface } from "../../types/data";
+import type { ProjectsInterface } from "../../types/projects";
 
 interface Props {
   project: ProjectsInterface;

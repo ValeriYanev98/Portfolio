@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type React from "react";
-import type { ProjectsInterface } from "../../types/data";
+import type { ProjectsInterface } from "../../types/projects";
 import styles from "./Projects.module.scss";
 import { PROJECTS } from "../../data/projects";
 import SingleProject from "./SingleProject";
