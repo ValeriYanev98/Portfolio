@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
     console.log(data);
 
     const response = await axios.post(
-      "http://localhost:3000/send-email",
+      "https://api-portfolio.valeriyanev.com/send-email",
       { data },
       { headers: { "Content-Type": "application/json" } }
     );
