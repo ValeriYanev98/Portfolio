@@ -16,7 +16,9 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
-    "build": "echo 'No build needed yet'"
+    "build": "tsc",
+    "dev": "npx tsx --watch src/index.ts",
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -28,7 +30,9 @@
     "nodemailer": "^7.0.10"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.5",
+    "@types/node": "^24.10.0",
     "@types/nodemailer": "^7.0.3",
     "i": "^0.3.7",
     "npm": "^11.6.2"
