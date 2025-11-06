@@ -12,7 +12,7 @@ const resend = new Resend(RESEND_API_KEY);
 export const sendEmailService = (data: Email) => {
   resend.emails.send({
     from: data.email,
-    to: EMAIL,
+    to: 'valeri@valeriyanev.com',
     subject: "Hello World!",
     html: `HI there`,
   });
