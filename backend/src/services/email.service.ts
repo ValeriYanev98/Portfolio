@@ -11,8 +11,8 @@ const resend = new Resend(RESEND_API_KEY);
 
 export const sendEmailService = async (email: Email) => {
   const { data, error } = await resend.emails.send({
-    from: email.email,
-    to: "valeri@resend.valeriyanev.com",
+    from: "Valeri <valeri@valeriyanev.com>",
+    to: "valeri.t.yanev@gmail.com",
     subject: "Hello World!",
     html: `HI there`,
   });
