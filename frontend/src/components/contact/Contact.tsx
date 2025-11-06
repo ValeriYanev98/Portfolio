@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import { EmailSchema } from "custom-validation";
 import type { Email } from "custom-validation";
+import axios, { type AxiosResponse } from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const Contact: React.FC = () => {
@@ -13,8 +14,16 @@ const Contact: React.FC = () => {
     formState: { errors },
   } = useForm<Email>({ resolver: zodResolver(EmailSchema), reValidateMode: "onBlur" });
 
-  const sendEmail: SubmitHandler<Email> = (data) => {
+  const sendEmail: SubmitHandler<Email> = async (data): Promise<void> => {
     console.log(data);
+
+    const response = await axios.post(
+      "http://localhost:3000/send-email",
+      { data },
+      { headers: { "Content-Type": "application/json" } }
+    );
+
+    console.log(response);
   };
 
   return (
