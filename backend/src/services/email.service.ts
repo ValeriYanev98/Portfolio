@@ -9,11 +9,15 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY as string;
 
 const resend = new Resend(RESEND_API_KEY);
 
-export const sendEmailService = (data: Email) => {
-  resend.emails.send({
-    from: data.email,
-    to: 'valeri.t.yanev@gmail.com',
+export const sendEmailService = async (email: Email) => {
+  const { data, error } = await resend.emails.send({
+    from: email.email,
+    to: "valeri@resend.valeriyanev.com",
     subject: "Hello World!",
     html: `HI there`,
   });
+
+  if (error) {
+    throw new Error("Failed to send email!");
+  }
 };
