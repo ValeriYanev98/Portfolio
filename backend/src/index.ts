@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 app.set("trust proxy", 1); // Reads the correct client IP address.
 
 app.use(helmet());
-app.use(cors({ origin: ["https://www.valeriyanev.com", "localhost:5173"], optionsSuccessStatus: 200 }));
+app.use(cors({ origin: ["https://www.valeriyanev.com", "http://localhost:5173"], optionsSuccessStatus: 200 }));
 app.use(express.json());
 app.use(limiter);
 
