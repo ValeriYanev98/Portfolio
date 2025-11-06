@@ -1,0 +1,17 @@
+@use "../../styles/colors" as *;
+@use "../../styles/fonts" as *;
+
+.notFound {
+  text-align: center;
+  padding: 4rem;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    text-decoration: underline;
+    color: $color-primary;
+  }
+}
