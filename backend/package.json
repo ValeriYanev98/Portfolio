@@ -1,7 +1,7 @@
 {
   "name": "portfolio_backend",
   "version": "1.0.0",
-  "description": "Server for the portfolio, mainly for sending emails with Nodemailer.",
+  "description": "Server for the portfolio, mainly for sending emails.",
   "homepage": "https://github.com/ValeriYanev98/Portfolio#readme",
   "bugs": {
     "url": "https://github.com/ValeriYanev98/Portfolio/issues"
@@ -27,13 +27,12 @@
     "express": "^5.1.0",
     "express-rate-limit": "^8.2.1",
     "helmet": "^8.1.0",
-    "nodemailer": "^7.0.10"
+    "resend": "^6.4.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.5",
     "@types/node": "^24.10.0",
-    "@types/nodemailer": "^7.0.3",
     "i": "^0.3.7",
     "npm": "^11.6.2"
   }
