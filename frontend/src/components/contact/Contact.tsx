@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import { EmailSchema } from "custom-validation";
 import type { Email } from "custom-validation";
-import axios, { type AxiosResponse } from "axios";
+import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const Contact: React.FC = () => {
