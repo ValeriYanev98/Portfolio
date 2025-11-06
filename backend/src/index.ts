@@ -20,6 +20,4 @@ app.use(limiter);
 
 app.use("/send-email", mailRouter);
 
-app.get("/", (req, res) => res.status(200).json({ Hello: "world" }));
-
 app.listen(PORT, () => console.log(`App listening on port: ${PORT}`));
