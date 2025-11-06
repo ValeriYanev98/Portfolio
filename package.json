@@ -15,7 +15,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build --workspaces --if-present"
+    "build": "tsc --build"
   },
   "workspaces": [
     "frontend",
