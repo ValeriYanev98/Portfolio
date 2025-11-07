@@ -12,8 +12,8 @@ const resend = new Resend(RESEND_API_KEY);
 
 export const sendEmailService = async (email: Email) => {
   const { error } = await resend.emails.send({
-    from: `Portfolio <${EMAIL_FROM}>`, // fixed.
-    to: EMAIL_TO,
+    from: `Portfolio <portfolio@valeriyanev.com>`, // fixed.
+    to: ['valeri@valeriyanev.com'],
     subject: `Reach out from - ${email.email}`,
     html: `
   <div style="font-family: Arial, sans-serif; color: #222; line-height: 1.5;">
