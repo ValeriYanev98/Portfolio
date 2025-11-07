@@ -12,7 +12,7 @@ const resend = new Resend(RESEND_API_KEY);
 
 export const sendEmailService = async (email: Email) => {
   const { error } = await resend.emails.send({
-    from: `Portfolio ${EMAIL_FROM}>`,
+    from: `Portfolio <${EMAIL_FROM}>`,
     to: EMAIL_TO,
     subject: `Reach out from - ${email.email}`,
     html: `
