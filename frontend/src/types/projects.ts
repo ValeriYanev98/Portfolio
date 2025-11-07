@@ -10,13 +10,17 @@ type VersionControl = "Git" | "GitHub";
 type Testing = "Vitest" | "React Testing Library";
 type Deployment = "Vercel";
 
+export type TechMap = {
+  frontend: { core: FrontendCore[]; styling: FrontendStyling[]; tooling: FrontendTools[] };
+  backend: { server: Server[]; database: Database[]; integration: Integration[] };
+  development: { versionControl: VersionControl[]; testing: Testing[]; deployment: Deployment[] };
+};
+
 export interface ProjectsInterface {
   image: string;
+  video: string;
   url: string;
   overview: string;
-  tech: {
-    frontend: { core: FrontendCore[]; styling: FrontendStyling[]; tooling: FrontendTools[] };
-    backend: { server: Server[]; database: Database[]; integration: Integration[] };
-    development: { versionControl: VersionControl[]; testing: Testing[]; deployment: Deployment[] };
-  };
+  tech: TechMap;
+  description: string;
 }
