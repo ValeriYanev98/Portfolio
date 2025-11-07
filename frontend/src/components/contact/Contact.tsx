@@ -1,4 +1,4 @@
-import type React from "react";
+import React from "react";
 import styles from "./Contact.module.scss";
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
