@@ -4,7 +4,6 @@ import type { ProjectsInterface } from "../../types/projects";
 import styles from "./Projects.module.scss";
 import { PROJECTS } from "../../data/projects";
 import SingleProject from "./SingleProject";
-import ProjectInformation from "./ProjectInformation";
 
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<null | ProjectsInterface>(null);
