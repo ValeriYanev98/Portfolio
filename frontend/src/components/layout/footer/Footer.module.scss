@@ -24,6 +24,10 @@
       padding-right: 1rem;
       color: $color-text-body;
 
+      &:hover {
+        text-decoration: underline;
+      }
+
       &:visited,
       &:link {
         color: $color-text-body;
@@ -33,6 +37,7 @@
         @extend %resumeButton;
         margin-left: 1rem;
         padding: 0.5rem 0.75rem;
+        text-decoration: none;
       }
 
       .img {
