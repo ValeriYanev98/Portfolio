@@ -37,4 +37,5 @@ export interface ProjectsInterface {
   overview: string;
   tech: TechMap;
   description: string;
+  gh: string;
 }
