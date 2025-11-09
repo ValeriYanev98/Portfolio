@@ -58,5 +58,10 @@
         @include boxShadowAction;
       }
     }
+
+    .error {
+      margin-left: 0.25rem;
+      color: $color-error;
+    }
   }
 }
