@@ -9,7 +9,6 @@ export const EmailSchema = z.object({
   email: z.email({ error: "Not an email!" }),
   message: z
     .string({ error: "Not a string" })
-    .regex(/^[\x20-\x7A]*$/, { error: "Only normal characters!" })
     .min(20, { error: "Message too short, expected at least 20 characters." })
     .max(1000, { error: "Message too long!" }),
   botField: z.string().max(0, { error: "Nice try, BOT!" }), // honeypot check if there is bot trying to spam, he will try to fill all fields.
