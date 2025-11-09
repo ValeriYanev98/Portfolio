@@ -18,3 +18,7 @@
 @mixin roundBorder {
   border-radius: 4px;
 }
+
+@mixin sectionsPadding($vertical: 2rem, $horizontal: 3rem) {
+  padding: $vertical $horizontal;
+}
