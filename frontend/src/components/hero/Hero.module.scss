@@ -1,12 +1,13 @@
 .sectionHero {
-  .sectionHeroIntroduction {
+  margin: 3rem 2rem 0 2rem;
+
+  .heading {
+    letter-spacing: 1.5px;
   }
 
-  .sectionHeroMainTechStack {
-    display: flex;
-
-    li {
-      list-style: none;
-    }
+  .introduction {
+    width: 50%;
+    line-height: 1.5;
+    margin-top: 1rem;
   }
 }

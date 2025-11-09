@@ -1,27 +1,60 @@
 @use "../../../styles/colors" as *;
+@use "../../../styles/mixins" as *;
 
 header {
   font-family: "Montserrat", sans-serif;
   display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $color-text-body;
 
   .logo {
     font-size: 3rem;
     text-decoration: none;
-    flex-shrink: 0;
-  }
+    letter-spacing: 1.5px;
 
-  .logo:visited,
-  .logo:link,
-  .logo:hover {
-    color: $color-primary;
-  }
+    &:visited,
+    &:link,
+    &:hover {
+      color: $color-primary;
+    }
 
-  .logo:active {
-    color: $color-secondary;
+    &:active {
+      color: darken($color-primary, 5%);
+    }
   }
 
   .navWrapper {
     display: flex;
     align-items: center;
+    gap: 3rem;
+
+    .downloadResume {
+      text-decoration: none;
+      border: 3px solid $color-primary;
+      background-color: $color-background-body;
+      color: $color-primary;
+      padding: 1rem 1.5rem;
+      margin-right: 5rem;
+      border-radius: 4px;
+      @include boxShadow;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        background-color: $color-primary;
+        color: $color-background-body;
+      }
+
+      &:visited,
+      &:link {
+        color: $color-primary;
+      }
+
+      &:active {
+        background-color: darken($color-primary, 5%);
+        border-color: darken($color-primary, 5%);
+        @include boxShadowAction;
+      }
+    }
   }
 }

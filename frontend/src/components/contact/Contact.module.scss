@@ -1,0 +1,57 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
+
+.sectionContact {
+  margin: 4rem 2rem 0 2rem;
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .secondaryText {
+    margin-top: 0.25rem;
+  }
+
+  .form {
+    margin-top: 0.5rem;
+    max-width: 500px;
+
+    .rowWrapper {
+      display: flex;
+      flex-direction: column;
+      margin: auto auto;
+
+      .label {
+        margin-bottom: 0.25rem;
+        width: fit-content;
+      }
+
+      .input {
+        margin-bottom: 0.5rem;
+        padding: 0.5rem 0.25rem;
+        border-radius: 2px;
+        border: 1px solid $color-text-body;
+      }
+
+      .input:focus {
+        outline: 0;
+        border: 1px solid $color-primary;
+      }
+
+      .error {
+        color: $color-error;
+        margin-left: 0.5rem;
+      }
+    }
+
+    .button {
+      border: 0;
+      border-radius: 2px;
+      padding: 0.5rem;
+      color: $color-background-body;
+      background-color: $color-primary;
+      cursor: pointer;
+      box-shadow: 2px 2px;
+    }
+  }
+}
