@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className={styles.sectionContact}>
+    <section className={styles.sectionContact} id="contact">
       <h3 className={styles.heading}>Get in Touch</h3>
       <p className={styles.secondaryText}>Feel free to reach out - I'm open to work!</p>
 
