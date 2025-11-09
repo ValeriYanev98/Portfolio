@@ -1,4 +1,4 @@
-import type React from "react";
+import React from "react";
 import styles from "./Projects.module.scss";
 import type { ProjectsInterface } from "../../types/projects";
 
@@ -9,16 +9,18 @@ interface Props {
 
 const SingleProject: React.FC<Props> = ({ project, setSelectedProject }) => {
   return (
-    <div className={styles.singleProject}>
-      <p>{project.overview}</p>
+    <div className={styles.singleProjectWrapper}>
+      <div className={styles.singleProject}>
+        <p className={styles.name}>{project.overview}</p>
 
-      <img
-        src={`/${project.image}`}
-        alt="Dominos project's image, showing the main page."
-        loading="lazy"
-        width={200}
-        onClick={() => setSelectedProject(project)}
-      />
+        <img
+          src={`/${project.image}`}
+          alt={project.overview}
+          className={styles.img}
+          loading="lazy"
+          onClick={() => setSelectedProject(project)}
+        />
+      </div>
     </div>
   );
 };
