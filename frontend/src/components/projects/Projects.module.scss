@@ -1,59 +1,152 @@
 @use "../../styles/colors" as *;
+@use "../../styles/mixins" as *;
+@use "sass:color";
 
 .sectionProjects {
-  position: relative;
+  margin: 6rem 2rem 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
 
-  .singleProject {
+  .singleProjectWrapper {
+    padding: 0 2rem;
+
+    .singleProject {
+      cursor: pointer;
+
+      .name {
+        font-size: 1.15rem;
+        margin-bottom: 0.5rem;
+        width: fit-content;
+      }
+
+      .img {
+        width: 20rem;
+        height: 10rem;
+        @include roundBorder;
+        @include boxShadow;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .img:hover {
+        @include boxShadowAction;
+      }
+    }
   }
 
   .selectedProject {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     z-index: 2;
     animation: appearFromBottom 0.33s ease-out forwards;
-    will-change: transform, opacity;
-    background-color: rgba($color: $color-background-body, $alpha: 0.8);
+    background-color: rgba($color: $color-background-body, $alpha: 0.95);
     padding: 2rem;
-    border-radius: 6px;
-    border-top-right-radius: 0;
+    @include roundBorder;
+    height: 90%;
+    max-height: 90%;
+    width: 70%;
+    max-width: 70%;
+    @include boxShadow;
 
     h3 {
       margin-bottom: 2rem;
       font-size: 2rem;
-      color: $color-secondary;
+      color: color.scale($color-primary, $lightness: -5%);
       user-select: none;
       width: fit-content;
     }
 
-    .selectedProjectMainPart {
+    .mainPart {
       display: flex;
       gap: 2rem;
 
-      .selectedProjectVideo {
-        width: 700px;
+      .video {
+        width: 600px;
         object-fit: cover;
+        @include roundBorder;
       }
 
-      .selectedProjectInformation {
-        .selectedProjectFrontend {
+      .information {
+        p:first-child {
+          font-size: 1.5rem;
         }
 
-        .selectedProjectTechWrapper {
+        .singleTechWrapper {
+          margin-top: 1rem;
+          margin-left: 1rem;
+
+          p {
+            margin-bottom: 0.25rem;
+            font-size: 1.15rem;
+            text-decoration: none;
+          }
+        }
+
+        .techWrapper {
+          display: flex;
           white-space: nowrap;
           overflow-x: auto;
           margin-left: 1rem;
+          align-items: center;
+          margin-bottom: 0.25rem;
 
-          .selectedProjectTech {
+          img {
+            margin-right: 0.15rem;
+            margin-left: 0.5rem;
+          }
+
+          img:first-of-type {
+            margin-left: 0 !important;
+          }
+
+          span:first-child {
+            margin-right: 0.5rem;
+          }
+
+          .techImg {
+            width: 1.5rem;
+          }
+
+          .techText {
             font-family: Inconsolata;
           }
         }
       }
     }
 
-    .selectedProjectDescription {
-      width: 80%;
+    .ghLink {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-left: 0.5rem;
+      border-left: 1px solid $color-text-body;
+      width: fit-content;
+
+      .img {
+        width: 1.5rem;
+      }
+
+      .text {
+        text-decoration: none;
+        color: $color-text-body;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:visited,
+        &:link {
+          color: $color-text-body;
+        }
+      }
+    }
+
+    .description {
+      width: 95%;
+      margin: auto;
       margin-top: 1rem;
+      line-height: 1.5;
     }
 
     .closeSelectedProject {
@@ -88,7 +181,7 @@
     }
 
     100% {
-      transform: translate(-50%, -38%);
+      transform: translate(-50%, -50%);
       opacity: 1;
     }
   }
