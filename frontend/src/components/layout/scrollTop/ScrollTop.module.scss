@@ -1,0 +1,8 @@
+@use "../../../styles/colors" as *;
+
+.scrollTop {
+  position: fixed;
+  bottom: 2.5%;
+  right: 1.25%;
+  cursor: pointer;
+}
