@@ -7,6 +7,7 @@ import type { Email } from "custom-validation";
 import axios, { type AxiosResponse } from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";
+import DOMPurify from "dompurify";
 
 const Contact: React.FC = () => {
   const {
@@ -21,9 +22,19 @@ const Contact: React.FC = () => {
   }, [setValue]);
 
   const sendEmail: SubmitHandler<Email> = async (data): Promise<void> => {
+    const sanitizedMessage = DOMPurify.sanitize(data.message);
+
+    const sanitizedData: Email = {
+      botField: data.botField,
+      email: data.email,
+      loadTime: data.loadTime,
+      message: sanitizedMessage,
+      name: data.name,
+    };
+
     const response: AxiosResponse<{ success: true }> = await axios.post(
       "https://api-portfolio.valeriyanev.com/send-email",
-      { data },
+      { data: sanitizedData },
       { headers: { "Content-Type": "application/json" } }
     );
 
