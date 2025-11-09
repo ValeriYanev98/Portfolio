@@ -7,8 +7,8 @@ header {
   font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 2rem;
   border-bottom: 1px solid $color-text-body;
+  @include sectionsPadding;
 
   .logo {
     font-size: 3rem;
