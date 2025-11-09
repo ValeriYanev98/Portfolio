@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
           <span className={styles.text}>Email</span>
         </a>
 
-        <a href="/dominos.large.png" download className={styles.link}>
+        <a href="/Valeri_Yanev_Resume.pdf" download className={styles.link}>
           <span className={styles.text}>Resume</span>
         </a>
       </div>

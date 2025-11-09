@@ -12,7 +12,7 @@ const Header: React.FC = () => {
       <div className={styles.navWrapper}>
         <Navbar />
 
-        <a download href="/dominos_large.png" className={styles.downloadResume}>
+        <a download href="/Valeri_Yanev_Resume.pdf" className={styles.downloadResume}>
           Resume
         </a>
       </div>
