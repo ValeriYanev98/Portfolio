@@ -1,0 +1,31 @@
+@use "./colors" as *;
+@use "./mixins" as *;
+@use "sass:color";
+
+%resumeButton {
+  text-decoration: none;
+  border: 2px solid $color-primary;
+  background-color: $color-background-body;
+  color: $color-primary;
+  padding: 1rem 1.5rem;
+  margin-right: 5rem;
+  @include roundBorder;
+  @include boxShadow;
+  transition: all 0.1s ease-in-out;
+
+  &:visited,
+  &:link {
+    color: $color-primary;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-background-body;
+  }
+
+  &:active {
+    background-color: color.scale($color-primary, $lightness: -5%);
+    border-color: color.scale($color-primary, $lightness: -5%);
+    @include boxShadowAction;
+  }
+}
