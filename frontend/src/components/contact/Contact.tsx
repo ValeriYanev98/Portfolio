@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Contact.module.scss";
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
@@ -10,6 +10,9 @@ import { useEffect } from "react";
 import DOMPurify from "dompurify";
 
 const Contact: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<null | string>(null);
+
   const {
     register,
     handleSubmit,
@@ -21,7 +24,19 @@ const Contact: React.FC = () => {
     setValue("loadTime", Date.now()); // Set the initial load time when the form mounts.
   }, [setValue]);
 
+  useEffect(() => {
+    if (error !== null) {
+      const nullifyError = setTimeout(() => {
+        setError(null);
+      }, 5000);
+
+      return () => clearTimeout(nullifyError);
+    }
+  }, [error]);
+
   const sendEmail: SubmitHandler<Email> = async (data): Promise<void> => {
+    setIsLoading(true);
+
     const sanitizedMessage = DOMPurify.sanitize(data.message);
 
     const sanitizedData: Email = {
@@ -32,16 +47,28 @@ const Contact: React.FC = () => {
       name: data.name,
     };
 
-    const response: AxiosResponse<{ success: true }> = await axios.post(
-      "https://api-portfolio.valeriyanev.com/send-email",
-      { data: sanitizedData },
-      { headers: { "Content-Type": "application/json" } }
-    );
+    try {
+      const response: AxiosResponse<{ success: true }> = await axios.post(
+        "https://api-portfolio.valeriyanev.com/send-email",
+        { data: sanitizedData },
+        { headers: { "Content-Type": "application/json" } }
+      );
 
-    if (response.data.success) {
-      setValue("email", "");
-      setValue("name", "");
-      setValue("message", "");
+      if (response.data.success) {
+        setValue("email", "");
+        setValue("name", "");
+        setValue("message", "");
+      }
+    } catch (err) {
+      const error = err as any;
+
+      if (error.status === 429) {
+        setError("429 (Too Many Requests)");
+      } else {
+        setError(error.response.data.error[0].message);
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -94,9 +121,11 @@ const Contact: React.FC = () => {
         <input {...register("botField")} autoComplete="off" style={{ display: "none" }} tabIndex={-1} />
         <input type="hidden" {...register("loadTime", { valueAsNumber: true })} />
 
-        <button type="submit" className={styles.button}>
+        <button type="submit" className={styles.button} disabled={isLoading}>
           Send Email
         </button>
+
+        <span className={styles.error}>{error}</span>
       </form>
     </section>
   );
