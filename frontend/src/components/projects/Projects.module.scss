@@ -3,7 +3,7 @@
 @use "sass:color";
 
 .sectionProjects {
-  background-color: #aebab1;
+  background-color: $color-background-projects;
   margin-top: 2rem;
   @include sectionsPadding;
 
