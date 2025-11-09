@@ -1,0 +1,48 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/inheritance" as *;
+
+.footer {
+  width: 100%;
+  border-top: 1px solid $color-text-body;
+  padding: 2rem 2rem 0 2rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .linkWrapper {
+    display: flex;
+
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      margin-right: 1rem;
+      text-decoration: none;
+      border-right: 1px solid $color-text-body;
+      padding-right: 1rem;
+      color: $color-text-body;
+
+      &:visited,
+      &:link {
+        color: $color-text-body;
+      }
+
+      &:last-child {
+        @extend %resumeButton;
+        margin-left: 1rem;
+        padding: 0.5rem 0.75rem;
+      }
+
+      .img {
+        width: 1.5rem;
+      }
+    }
+  }
+
+  .note {
+    padding-right: 5rem;
+    color: rgba($color-text-body, 0.7);
+  }
+}
