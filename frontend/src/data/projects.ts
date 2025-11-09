@@ -34,7 +34,7 @@ export const PROJECTS: ProjectsInterface[] = [
       },
     },
     gh: "https://github.com/ValeriYanev98/Dominos-Clone",
-    url: "https://www.dominos-clone.valeriyanev.com/",
+    url: "https://www.dominos.valeriyanev.com/",
     description:
       "I architected a full-stack clone of the Dominos Pizza web application, showing my ability to manage complex e-commerce workflows. I engineered a secure payment gateway using Stripe's API and implemented Google OAuth2 for quick and secure user authentication. The application features real-time order tracking and robust data handling, allowing users to save multiple delivery addresses directly from an interactive map. This project validates my expertise in building scalable and feature-rich applications using a PostgreSQL database and a structured TypeScript/React interface.",
   },
