@@ -5,12 +5,17 @@ const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.linkWrapper}>
-        <a href="https://github.com/ValeriYanev98" target="_blank" className={styles.link}>
+        <a href="https://github.com/ValeriYanev98" target="_blank" rel="noopener noreferrer" className={styles.link}>
           <img src="/svg/github.svg" className={styles.img} />
           <span className={styles.text}>GitHub</span>
         </a>
 
-        <a href="https://www.linkedin.com/in/valeri-t-yanev/" target="_blank" className={styles.link}>
+        <a
+          href="https://www.linkedin.com/in/valeri-t-yanev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.link}
+        >
           <img src="/svg/linkedin.svg" className={styles.img} />
           <span className={styles.text}>LinkedIn</span>
         </a>
