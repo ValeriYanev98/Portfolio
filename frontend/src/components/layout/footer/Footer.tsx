@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
         </a>
       </div>
 
-      <div className={styles.note}>&copy;2025 Valeri. All rights reserved.</div>
+      <div className={styles.note}>&copy;2025 Valeri Yanev. All rights reserved.</div>
     </footer>
   );
 };
