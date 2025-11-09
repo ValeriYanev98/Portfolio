@@ -41,12 +41,19 @@ const Projects: React.FC = () => {
   }, []);
 
   return (
-    <section className={styles.sectionProjects}>
+    <section className={styles.sectionProjects} id="projects">
+      <hgroup className={styles.headingWrapper}>
+        <h2 className={styles.heading}>Projects</h2>
+        <p className={styles.description}>Explore my work</p>
+      </hgroup>
+
       {selectedProject && <SelectedProject selectedProject={selectedProject} setSelectedProject={setSelectedProject} />}
 
-      {PROJECTS.map((project) => (
-        <SingleProject project={project} setSelectedProject={setSelectedProject} key={project.image} />
-      ))}
+      <div className={styles.projectsWrapper}>
+        {PROJECTS.map((project) => (
+          <SingleProject project={project} setSelectedProject={setSelectedProject} key={project.image} />
+        ))}
+      </div>
 
       {selectedProject && <div className={styles.blurredOverlay} ref={blurredOverlayRef} />}
     </section>

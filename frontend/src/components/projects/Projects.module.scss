@@ -3,32 +3,75 @@
 @use "sass:color";
 
 .sectionProjects {
-  margin: 6rem 2rem 0 2rem;
-  display: flex;
-  flex-wrap: wrap;
+  background-color: #aebab1;
+  margin-top: 2rem;
+  @include sectionsPadding;
 
-  .singleProjectWrapper {
-    padding: 0 2rem;
+  .headingWrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
-    .singleProject {
-      cursor: pointer;
+    .heading {
+      font-size: 2rem;
+      position: relative;
+      margin-bottom: 0.75rem;
+      width: fit-content;
 
-      .name {
-        font-size: 1.15rem;
-        margin-bottom: 0.5rem;
-        width: fit-content;
-      }
-
-      .img {
-        width: 20rem;
-        height: 10rem;
-        @include roundBorder;
-        @include boxShadow;
+      &::after {
         transition: all 0.2s ease-in-out;
+        content: "";
+        display: block;
+        width: 4rem;
+        height: 3px;
+        background-color: $color-primary;
+        @include roundBorder;
+        margin: 0.5rem auto 0;
+        text-align: center;
       }
 
-      .img:hover {
-        @include boxShadowAction;
+      &:hover::after {
+        width: 100%;
+      }
+    }
+
+    .description {
+      color: color.adjust($color-text-body, $lightness: 15%);
+      font-size: 1.1rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .projectsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .singleProjectWrapper {
+      padding: 0 2rem;
+
+      .singleProject {
+        cursor: pointer;
+
+        .name {
+          font-size: 1.15rem;
+          margin-bottom: 0.5rem;
+          width: fit-content;
+        }
+
+        .img {
+          width: 20rem;
+          height: 10rem;
+          @include roundBorder;
+          @include boxShadow;
+          transition: all 0.2s ease-in-out;
+        }
+
+        .img:hover {
+          @include boxShadowAction;
+        }
       }
     }
   }
