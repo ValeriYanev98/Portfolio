@@ -1,17 +1,20 @@
 @use "./colors" as *;
 
-@mixin boxShadow() {
+@mixin boxShadow {
   $darker: rgba($color-text-body, 0.15);
   $default: rgba($color-text-body, 0.1);
 
   box-shadow: 0 2px 4px $darker, 0 8px 16px $default;
 }
 
-@mixin boxShadowAction() {
+@mixin boxShadowAction {
   $darker: rgba($color-text-body, 0.2);
   $default: rgba($color-text-body, 0.15);
 
   box-shadow: 0 2px 5px 0 $darker, 0 12px 25px 0 $default;
+  transform: translate(1px, 0.5px);
+}
 
-  transform: translateY(1px);
+@mixin roundBorder {
+  border-radius: 4px;
 }
