@@ -87,8 +87,8 @@
     @include roundBorder;
     height: 90%;
     max-height: 90%;
-    width: 70%;
-    max-width: 70%;
+    width: 75%;
+    max-width: 75%;
     @include boxShadow;
 
     h3 {
@@ -102,11 +102,35 @@
     .mainPart {
       display: flex;
       gap: 2rem;
+      position: relative;
 
-      .video {
-        width: 600px;
-        object-fit: cover;
-        @include roundBorder;
+      .shimmering {
+        width: 37rem;
+        height: 21rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
+        background-size: 300%;
+        background-position-x: 100%;
+        animation: shimmer 2s infinite linear;
+      }
+
+      @keyframes shimmer {
+        to {
+          background-position-x: 0%;
+        }
+      }
+
+      .videoWrapper {
+        width: 37rem;
+        height: 21rem;
+
+        .video {
+          width: 37rem;
+          height: 21rem;
+          @include roundBorder;
+        }
       }
 
       .information {
@@ -115,11 +139,11 @@
         }
 
         .singleTechWrapper {
-          margin-top: 1rem;
+          margin-top: 0.5rem;
           margin-left: 1rem;
 
-          p {
-            margin-bottom: 0.25rem;
+          .feBeDe {
+            margin-bottom: 0.15rem;
             font-size: 1.15rem;
             text-decoration: none;
           }
@@ -131,7 +155,7 @@
           overflow-x: auto;
           margin-left: 1rem;
           align-items: center;
-          margin-bottom: 0.25rem;
+          margin-bottom: 0.15rem;
 
           img {
             margin-right: 0.15rem;
@@ -164,6 +188,7 @@
       padding-left: 0.5rem;
       border-left: 1px solid $color-text-body;
       width: fit-content;
+      margin-top: 0.5rem;
 
       .img {
         width: 1.5rem;
