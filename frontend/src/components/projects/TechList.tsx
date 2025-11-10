@@ -10,9 +10,15 @@ interface Props<T> {
 const TechList = <T extends { text: string; img: string }>({ items, label }: Props<T>) => {
   if (items.length === 0) return null;
 
+  const formatLabel = (label: string): string => {
+    if (label === "versionControl") return "Version Control: ";
+
+    return label[0].toLocaleUpperCase() + label.substring(1, label.length) + ": ";
+  };
+
   return (
     <div className={styles.techWrapper}>
-      <span>{label}: </span>
+      <span>{formatLabel(label)}</span>
 
       {items.map((tech, i) => (
         <React.Fragment key={uuidv4()}>

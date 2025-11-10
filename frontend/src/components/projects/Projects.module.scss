@@ -45,12 +45,13 @@
   }
 
   .projectsWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 25rem));
+    row-gap: 1.5rem;
 
     .singleProjectWrapper {
       padding: 0 2rem;
+      width: fit-content;
 
       .singleProject {
         cursor: pointer;
