@@ -5,25 +5,22 @@
 .footer {
   width: 100%;
   border-top: 1px solid $color-text-body;
-  padding: 2rem 2rem 0 2rem;
   margin-top: 2rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  @include sectionsPadding;
+  flex-direction: column;
 
   .linkWrapper {
     display: flex;
+    justify-content: center;
 
     .link {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.25rem;
-      margin-right: 1rem;
       text-decoration: none;
       border-right: 1px solid $color-text-body;
-      padding-right: 1rem;
+      padding: 0 1rem;
       color: $color-text-body;
 
       &:hover {
@@ -35,11 +32,8 @@
         color: $color-text-body;
       }
 
-      &:last-child {
-        @extend %resumeButton;
-        margin-left: 1rem;
-        padding: 0.5rem 0.75rem;
-        text-decoration: none;
+      &:nth-child(3) {
+        border: 0;
       }
 
       .img {
@@ -48,8 +42,64 @@
     }
   }
 
+  .resume,
+  .resumeMobile {
+    @extend %resumeButton;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+    margin-top: 1rem;
+  }
+
+  .resume {
+    display: none;
+  }
+
   .note {
-    padding-right: 5rem;
     color: rgba($color-text-body, 0.7);
+    margin: 1rem 0;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .resumeMobile {
+    display: none;
+  }
+
+  .resume {
+    display: block !important;
+    margin: 0 !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    @include sectionsPadding;
+    align-items: center;
+
+    .link {
+      gap: 0.25rem;
+      margin-right: 1rem;
+      padding-right: 1rem;
+      padding-left: 0 !important;
+
+      &:nth-child(3) {
+        border-right: 1px solid $color-text-body !important;
+      }
+    }
+
+    .resume {
+      padding: 0.5rem 0.75rem;
+      margin-left: 1rem !important;
+    }
+
+    .note {
+      padding-right: 5rem;
+      margin: 0;
+    }
   }
 }

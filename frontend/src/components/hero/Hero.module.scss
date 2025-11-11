@@ -1,16 +1,52 @@
 @use "../../styles/mixins" as *;
 
 .sectionHero {
-  margin: 0 2rem;
-  @include sectionsPadding;
+  margin: 1rem 2rem 2rem 2rem;
+  padding-top: 0.5rem;
 
-  .heading {
+  .heading1 {
     letter-spacing: 1.5px;
+    display: none;
+  }
+
+  .heading1Mobile {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.25rem;
+  }
+
+  .heading3Mobile {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
   }
 
   .introduction {
-    width: 50%;
     line-height: 1.5;
-    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1200px) {
+  .sectionHero {
+    @include sectionsPadding;
+    margin: 0 2rem;
+
+    .heading1Mobile,
+    .heading3Mobile {
+      display: none;
+    }
+
+    .heading1 {
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .introduction {
+      width: 50%;
+      line-height: 1.5;
+    }
   }
 }

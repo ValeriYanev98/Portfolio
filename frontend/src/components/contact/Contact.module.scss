@@ -2,8 +2,7 @@
 @use "../../styles/colors" as *;
 
 .sectionContact {
-  margin: 4rem 2rem 0 2rem;
-  @include sectionsPadding;
+  margin: 2rem 2rem 0 2rem;
 
   .heading {
     font-size: 1.5rem;
@@ -63,5 +62,15 @@
       margin-left: 0.25rem;
       color: $color-error;
     }
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1200px) {
+  .sectionContact {
+    margin: 4rem 2rem 0;
+    @include sectionsPadding;
   }
 }

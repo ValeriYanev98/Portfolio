@@ -8,10 +8,10 @@
   background-color: $color-background-body;
   color: $color-primary;
   padding: 1rem 1.5rem;
-  margin-right: 5rem;
   @include roundBorder;
   @include boxShadow;
-  transition: all 0.1s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 
   &:visited,
   &:link {

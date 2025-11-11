@@ -4,8 +4,9 @@
 
 .sectionProjects {
   background-color: $color-background-projects;
-  margin-top: 2rem;
-  @include sectionsPadding;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 
   .headingWrapper {
     margin-bottom: 2rem;
@@ -57,8 +58,7 @@
         cursor: pointer;
 
         .name {
-          font-size: 1.15rem;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.25rem;
           width: fit-content;
         }
 
@@ -84,30 +84,32 @@
     z-index: 2;
     animation: appearFromBottom 0.33s ease-out forwards;
     background-color: rgba($color: $color-background-body, $alpha: 0.95);
-    padding: 2rem;
+    padding: 1rem;
     @include roundBorder;
-    height: 90%;
-    max-height: 90%;
-    width: 75%;
-    max-width: 75%;
+    height: 95%;
+    max-height: 95%;
+    width: 95%;
+    max-width: 95%;
     @include boxShadow;
+    overflow-y: auto;
+    overflow-x: auto;
 
     h3 {
-      margin-bottom: 2rem;
-      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
       color: color.scale($color-primary, $lightness: -5%);
       user-select: none;
-      width: fit-content;
     }
 
     .mainPart {
       display: flex;
-      gap: 2rem;
+      flex-direction: column;
+      gap: 0.5rem;
       position: relative;
 
       .shimmering {
-        width: 37rem;
-        height: 21rem;
+        width: 20rem;
+        height: 11.25rem;
         position: absolute;
         left: 0;
         top: 0;
@@ -123,65 +125,61 @@
         }
       }
 
-      .videoWrapper {
-        width: 37rem;
-        height: 21rem;
+      .video {
+        width: 20rem;
+        height: 11.25rem;
 
-        .video {
-          width: 37rem;
-          height: 21rem;
-          @include roundBorder;
+        @include roundBorder;
+      }
+    }
+
+    .information {
+      p:first-child {
+        font-size: 1.5rem;
+      }
+
+      .singleTechWrapper {
+        margin-top: 0.5rem;
+
+        .feBeDe {
+          margin-bottom: 0.15rem;
+          font-size: 1.15rem;
+          text-decoration: none;
         }
       }
 
-      .information {
-        p:first-child {
-          font-size: 1.5rem;
+      .techWrapper {
+        display: flex;
+        white-space: nowrap;
+        overflow-x: auto;
+        margin-left: 0.5rem;
+        align-items: center;
+        margin-bottom: 0.15rem;
+
+        img {
+          margin-right: 0.15rem;
+          margin-left: 0.5rem;
         }
 
-        .singleTechWrapper {
-          margin-top: 0.5rem;
-          margin-left: 1rem;
-
-          .feBeDe {
-            margin-bottom: 0.15rem;
-            font-size: 1.15rem;
-            text-decoration: none;
-          }
+        img:first-of-type {
+          margin-left: 0 !important;
         }
 
-        .techWrapper {
-          display: flex;
-          white-space: nowrap;
-          overflow-x: auto;
-          margin-left: 1rem;
-          align-items: center;
-          margin-bottom: 0.15rem;
+        span:first-child {
+          margin-right: 0.5rem;
+        }
 
-          img {
-            margin-right: 0.15rem;
-            margin-left: 0.5rem;
-          }
+        .techImg {
+          width: 1.5rem;
+        }
 
-          img:first-of-type {
-            margin-left: 0 !important;
-          }
-
-          span:first-child {
-            margin-right: 0.5rem;
-          }
-
-          .techImg {
-            width: 1.5rem;
-          }
-
-          .techText {
-            font-family: Inconsolata;
-          }
+        .techText {
+          font-family: Inconsolata;
         }
       }
     }
 
+    .ghLinkMobile,
     .ghLink {
       display: flex;
       align-items: center;
@@ -189,7 +187,6 @@
       padding-left: 0.5rem;
       border-left: 1px solid $color-text-body;
       width: fit-content;
-      margin-top: 0.5rem;
 
       .img {
         width: 1.5rem;
@@ -211,24 +208,27 @@
       }
     }
 
+    .ghLink {
+      display: none;
+    }
+
     .description {
-      width: 95%;
+      padding-top: 0.5rem;
       margin: auto;
       margin-top: 1rem;
       line-height: 1.5;
     }
 
     .closeSelectedProject {
-      position: absolute;
-      top: 0;
-      right: 0;
+      position: fixed;
+      top: 10px;
+      right: 10px;
       z-index: 2;
-      padding: 0.25rem 0.5rem;
-      transform: translate(50%, -50%);
-      background-color: rgba($color: $color-background-body, $alpha: 0.8);
-      color: $color-primary;
-      border-radius: 50%;
+      padding: 0.25rem 0.55rem;
+      background-color: $color-primary;
+      color: $color-background-body;
       cursor: pointer;
+      border-radius: 50%;
     }
   }
 
@@ -252,6 +252,65 @@
     100% {
       transform: translate(-50%, -50%);
       opacity: 1;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1200px) {
+  .sectionProjects {
+    @include sectionsPadding;
+    margin-top: 2rem;
+
+    .projectsWrapper {
+      .name {
+        font-size: 1.15rem;
+        margin-bottom: 0.5rem !important;
+      }
+    }
+
+    .selectedProject {
+      padding: 2rem;
+      height: 90%;
+      max-height: 90%;
+      width: 75%;
+      max-width: 75%;
+
+      h3 {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        width: fit-content;
+      }
+
+      .mainPart {
+        flex-direction: row;
+        gap: 2rem;
+
+        .shimmering,
+        .video {
+          width: 37rem;
+          height: 21rem;
+        }
+
+        .ghLinkMobile {
+          display: none;
+        }
+
+        .techWrapper {
+          margin-left: 1rem;
+        }
+      }
+
+      .ghLink {
+        display: block;
+        margin-top: 0.5rem;
+      }
+
+      .description {
+        width: 95%;
+      }
     }
   }
 }
