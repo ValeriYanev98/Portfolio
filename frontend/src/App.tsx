@@ -17,9 +17,9 @@ const App: React.FC = () => {
 
   return (
     <Layout>
+      {showScrollToTop && <ScrollTop />}
       <Hero setShowScrollToTop={setShowScrollToTop} />
       <Projects />
-      {showScrollToTop && <ScrollTop />}
       <Contact />
     </Layout>
   );
