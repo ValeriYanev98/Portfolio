@@ -28,7 +28,9 @@ const Hero: React.FC<Props> = ({ setShowScrollToTop }) => {
 
   return (
     <section className={styles.sectionHero} id="hero" ref={ref}>
-      <h1 className={styles.heading}>Valeri Yanev | Full-Stack Web Developer</h1>
+      <h1 className={styles.heading1}>Valeri Yanev | Full-Stack Web Developer</h1>
+      <h1 className={styles.heading1Mobile}>Valeri Yanev</h1>
+      <h3 className={styles.heading3Mobile}>Full-Stack Web Developer</h3>
       <p className={styles.introduction}>
         I build secure and fast web applications with React, TypeScript and Node.js, creating complex features like
         secure payment integration and real-time data tracking.
