@@ -43,12 +43,19 @@
 }
 
 @media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .navWrapper {
+      gap: 1rem;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
   .header {
-    flex-direction: row;
-    justify-content: space-between;
     @include sectionsPadding;
 
     .logo {

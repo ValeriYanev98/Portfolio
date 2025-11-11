@@ -107,6 +107,10 @@
       gap: 0.5rem;
       position: relative;
 
+      a {
+        width: fit-content;
+      }
+
       .shimmering {
         width: 20rem;
         height: 11.25rem;
@@ -257,6 +261,11 @@
 }
 
 @media (min-width: 768px) {
+  .shimmering,
+  .video {
+    width: 37rem !important;
+    height: 21rem !important;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -286,12 +295,6 @@
       .mainPart {
         flex-direction: row;
         gap: 2rem;
-
-        .shimmering,
-        .video {
-          width: 37rem;
-          height: 21rem;
-        }
 
         .ghLinkMobile {
           display: none;
