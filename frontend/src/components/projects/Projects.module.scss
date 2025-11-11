@@ -262,7 +262,6 @@
 @media (min-width: 1200px) {
   .sectionProjects {
     @include sectionsPadding;
-    margin-top: 2rem;
 
     .projectsWrapper {
       .name {
