@@ -34,17 +34,26 @@ const SelectedProject: React.FC<Props> = ({ selectedProject, setSelectedProject 
       <div className={styles.mainPart}>
         {!isVideoLoaded && <div className={styles.shimmering} />}
 
-        <a href={selectedProject.url} target="_blank" className={styles.videoWrapper}>
+        <a href={selectedProject.url} target="_blank">
           <video src={`/${selectedProject.video}`} className={styles.video} muted autoPlay loop ref={ref} />
         </a>
+
+        <div className={styles.ghLinkMobile}>
+          <img src="svg/github.svg" alt="GitHub image." className={styles.img} />
+          <a className={styles.text} href={selectedProject.gh} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </div>
 
         <div className={styles.information}>
           <p>Information:</p>
 
           <TechCategory label="Frontend" techCategories={selectedProject.tech.frontend} />
-          {selectedProject.tech.backend && (
-            <TechCategory label="Backend" techCategories={selectedProject.tech.backend} />
-          )}
+          {selectedProject.tech.backend &&
+            selectedProject.tech.backend.server &&
+            selectedProject.tech.backend.server[0] && (
+              <TechCategory label="Backend" techCategories={selectedProject.tech.backend} />
+            )}
           <TechCategory label="Development" techCategories={selectedProject.tech.development} />
         </div>
       </div>
