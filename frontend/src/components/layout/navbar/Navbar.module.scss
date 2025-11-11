@@ -3,31 +3,52 @@
 
 .navbar {
   font-family: "Lato", sans-serif;
-  font-size: 1.25rem;
 
   .navList {
     display: flex;
     list-style: none;
-    gap: 2rem;
-  }
+    gap: 0.25rem;
 
-  .navItem{
-    border-right: 1px solid $color-text-body;
-    padding-right:2rem;
-  }
+    .navItem {
+      border-right: 1px solid $color-text-body;
 
-  .navItem:last-of-type {
-    border-right: 0;
-  }
+      &:last-of-type {
+        border-right: 0;
+      }
 
-  .navItem a {
-    color: $color-primary;
-  }
+      &:first-child .navLink {
+        padding-left: 0;
+      }
+    }
 
-  .navItem:visited,
-  .navLink:link,
-  .navitem:active {
-    color: $color-primary;
-    text-decoration: none;
+    .navLink {
+      color: $color-primary;
+      padding: 1rem 0.5rem;
+
+      &:visited,
+      &:link,
+      &:active,
+      &:hover {
+        color: $color-primary;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1200px) {
+  .navbar {
+    font-size: 1.25rem;
+
+    .navList {
+      gap: 2rem;
+
+      .navLink {
+        padding-right: 2rem;
+      }
+    }
   }
 }

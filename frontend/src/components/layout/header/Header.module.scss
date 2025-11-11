@@ -3,17 +3,21 @@
 @use "../../../styles/inheritance" as *;
 @use "sass:color";
 
-header {
+.header {
   font-family: "Montserrat", sans-serif;
+  justify-content: center;
+  padding: 1rem;
+  gap: 0.5rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   border-bottom: 1px solid $color-text-body;
-  @include sectionsPadding;
 
   .logo {
-    font-size: 3rem;
+    font-size: 1.5rem;
     text-decoration: none;
     letter-spacing: 1.5px;
+    width: fit-content;
+    text-transform: uppercase;
 
     &:visited,
     &:link,
@@ -29,10 +33,35 @@ header {
   .navWrapper {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    justify-content: space-between;
 
     .downloadResume {
       @extend %resumeButton;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1200px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    @include sectionsPadding;
+
+    .logo {
+      font-size: 3rem;
+    }
+
+    .navWrapper {
+      gap: 3rem;
+    }
+
+    .downloadResume {
+      padding: 1rem 1.5rem !important;
+      margin-right: 5rem;
     }
   }
 }
