@@ -1,7 +1,10 @@
 import * as z from "zod";
 
 export const EmailSchema = z.object({
-  name: z.string({ error: "Not a string!" }).min(2, { error: "Name too short!" }).max(122, { error: "Name too long!" }),
+  name: z
+    .string({ error: "Not a string!" })
+    .min(2, { error: "Name too short!" })
+    .max(122, { error: "Name too long!" }),
   email: z.email({ error: "Not an email!" }),
   message: z
     .string({ error: "Not a string" })
