@@ -9,4 +9,8 @@ export default defineConfig({
       generateScopedName: "[hash:base64:16][hash:hex]",
     },
   },
+  server: {
+    host: "0.0.0.0",
+    port: 5173,
+  },
 });
