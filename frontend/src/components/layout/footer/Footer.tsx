@@ -25,10 +25,14 @@ const Footer: React.FC = () => {
           <span className={styles.text}>Email</span>
         </a>
 
-        <a href="/Valeri_Yanev_Resume.pdf" download className={styles.link}>
+        <a href="/Valeri_Yanev_Resume.pdf" download className={styles.resume}>
           <span className={styles.text}>Resume</span>
         </a>
       </div>
+
+      <a href="/Valeri_Yanev_Resume.pdf" download className={styles.resumeMobile}>
+        <span className={styles.text}>Resume</span>
+      </a>
 
       <div className={styles.note}>&copy;2025 Valeri Yanev. All rights reserved.</div>
     </footer>
