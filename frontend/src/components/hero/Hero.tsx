@@ -35,6 +35,23 @@ const Hero: React.FC<Props> = ({ setShowScrollToTop }) => {
         I build secure and fast web applications with React, TypeScript and Node.js, creating complex features like
         secure payment integration and real-time data tracking.
       </p>
+
+      <div className={styles.linksWrapper}>
+        <a href="https://github.com/ValeriYanev98" target="_blank" rel="noopener noreferrer" className={styles.link}>
+          <img src="/svg/github.svg" className={styles.img} />
+          <span className={styles.text}>GitHub</span>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/valeri-t-yanev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.link}
+        >
+          <img src="/svg/linkedin.svg" className={styles.img} />
+          <span className={styles.text}>LinkedIn</span>
+        </a>
+      </div>
     </section>
   );
 };
