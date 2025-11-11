@@ -37,6 +37,17 @@
 }
 
 @media (min-width: 768px) {
+  .navbar {
+    font-size: 1.1rem;
+
+    .navList {
+      gap: 0.5rem;
+
+      .navLink {
+        padding-right: 0.5rem;
+      }
+    }
+  }
 }
 
 @media (min-width: 1200px) {
