@@ -61,7 +61,7 @@ const Contact: React.FC = () => {
       const error = err as any;
 
       if (error.status === 429) {
-        setError("429 (Too Many Requests)");
+        setError("Too Many Requests. Try again later.");
       } else {
         setError(error.response.data.error[0].message);
       }
