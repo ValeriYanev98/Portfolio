@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import { EmailSchema } from "custom-validation";
 import type { Email } from "custom-validation";
-import axios, { type AxiosResponse } from "axios";
+import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";
 import DOMPurify from "dompurify";
@@ -48,17 +48,15 @@ const Contact: React.FC = () => {
     };
 
     try {
-      const response: AxiosResponse<{ success: true }> = await axios.post(
+      await axios.post(
         "https://api-portfolio.valeriyanev.com/send-email",
         { data: sanitizedData },
         { headers: { "Content-Type": "application/json" } }
       );
 
-      if (response.data.success) {
-        setValue("email", "");
-        setValue("name", "");
-        setValue("message", "");
-      }
+      setValue("email", "");
+      setValue("name", "");
+      setValue("message", "");
     } catch (err) {
       const error = err as any;
 
@@ -121,9 +119,21 @@ const Contact: React.FC = () => {
         <input {...register("botField")} autoComplete="off" style={{ display: "none" }} tabIndex={-1} />
         <input type="hidden" {...register("loadTime", { valueAsNumber: true })} />
 
-        <button type="submit" className={styles.button} disabled={isLoading}>
-          Send Email
-        </button>
+        {!isLoading ? (
+          <button
+            type="submit"
+            className={`${styles.button} ${isLoading && styles.buttonDisabled}`}
+            disabled={isLoading}
+          >
+            Send Email
+          </button>
+        ) : (
+          <button className={`${styles.button} ${styles.buttonDisabledText}`} disabled>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+          </button>
+        )}
 
         <span className={styles.error}>{error}</span>
       </form>
